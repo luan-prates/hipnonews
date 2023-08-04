@@ -4,7 +4,7 @@ function Home() {
       <h1>HipnoNews</h1>
       <p>
         Estamos construindo um novo espaço na internet para quem trabalha e
-        estuda sobre Hipnose, precisa consumir conteúdo de qualidade e quer interagir com outras pessoas que estão na mesma jornad´´ .
+        estuda sobre Hipnose, precisa consumir conteúdo de qualidade e quer interagir com outras pessoas que estão na mesma jornada.
       </p>
     </div>
   );
