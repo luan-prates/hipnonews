@@ -18,6 +18,4 @@ test("GET to /api/v1/status should return 200", async () => {
 
   expect(responseBoby.dependencies.database.count_connections).toEqual(1)
 
-  console.log(responseBoby)
-
 });
