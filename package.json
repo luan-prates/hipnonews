@@ -4,7 +4,7 @@
   "description": "HipnoNews é uma plataforma em formato de Fóruns para a comunidade de Hipnose compartilhar conteúdo de valor, tirar dúvidas e interagirem. Idealizada pelo hipnólogo e desenvolvedor : Luan Prates, a plataforma está disponível em hipnonews, é baseada no tabnews e possui código aberto no GitHub.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && next dev",
+    "dev": "npm run services:up && npm run wait-for-postgres && npm run migration:up && next dev",
     "services:up": "docker compose -f infra/compose.yaml up -d",
     "services:stop": "docker compose -f infra/compose.yaml stop",
     "services:down": "docker compose -f infra/compose.yaml down",
@@ -13,7 +13,8 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watchAll --runInBand",
     "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
-    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up"
+    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
+    "wait-for-postgres": "node infra/scripts/wait-for-postgres.js"
   },
   "author": "Luan Prates",
   "license": "ISC",
